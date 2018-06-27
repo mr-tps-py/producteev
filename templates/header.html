@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet prefetch' href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <style type="text/css">
+      
+      body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+         #credits li,
+         #credits li a {
+           color: white;
+         }
+         
+         #credits li a {
+           font-weight: bold;
+         }
+         
+         .footer-copyright .container,
+         .footer-copyright .container a {
+           color: #BCC2E2;
+         }
+         
+         .fab-tip {
+           position: fixed;
+           right: 85px;
+           padding: 0px 0.5rem;
+           text-align: right;
+           background-color: #323232;
+           border-radius: 2px;
+           color: #FFF;
+           width: auto;
+         }
+      .c{
+         background-color: #003F72;
+      }
+      .modal { height: 100% !important ;border-radius: 10px; } 
+      
+       /* label color */
+       .input-field label {
+          color: #003F72;
+        }
+        /* label focus color */
+        .input-field input[type=text]:focus + label {
+          color: #003F72;
+        }
+        /* label underline focus color */
+        .input-field input[type=text]:focus {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* valid color */
+        .input-field input[type=text].valid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* invalid color */
+        .input-field input[type=text].invalid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+
+
+        .input-field input[type=email]:focus + label {
+          color: #003F72;
+        }
+        /* label underline focus color */
+        .input-field input[type=email]:focus {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* valid color */
+        .input-field input[type=email].valid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* invalid color */
+        .input-field input[type=email].invalid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+
+
+  .input-field input[type=tel]:focus + label {
+          color: #003F72;
+        }
+        /* label underline focus color */
+        .input-field input[type=tel]:focus {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* valid color */
+        .input-field input[type=tel].valid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* invalid color */
+        .input-field input[type=tel].invalid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+
+
+
+        /* label focus color */
+        .input-field input[type=password]:focus + label {
+          color: #003F72;
+        }
+        /* label underline focus color */
+        .input-field input[type=password]:focus {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* valid color */
+        .input-field input[type=password].valid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* invalid color */
+        .input-field input[type=password].invalid {
+          border-bottom: 1px solid #003F72;
+          box-shadow: 0 1px 0 0 #003F72;
+        }
+        /* icon prefix focus color */
+        .input-field .prefix.active {
+          color: #003F72;
+        }
+        .dropdown-content{
+          background-color: #FFFFFF;
+        margin: 0;
+        display: none;
+        min-width: 150px; /* Changed this to accomodate content width */
+        max-height: auto;
+          margin-left: -1px; /* Add this to keep dropdown in line with edge of navbar */
+        overflow: hidden; /* Changed this from overflow-y:auto; to overflow:hidden; */
+        opacity: 0;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+        will-change: width, height;
+        }
+        footer.page-footer{
+            background-color: #000000;
+        }
+         </style>
+</head>
+<body>
+    {% if not session.logged_in %}
+    <div class="navbar-fixed">
+            <nav style="background-color:#1b1c1d">
+              <div class="nav-wrapper container">
+                <a href="/" class="brand-logo"><img class="img-responsive" src="{{ url_for("static",filename='img/logo.png') }}"></a>
+                <a href="#" data-activates="navsidebar" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <ul class="right hide-on-med-and-down">
+                <li><i class="material-icons">search</i></li>
+                <li>
+                  <form method="get" id="searchform" style="height:50px;" action="/search/?l=hi">
+                    <input name="q" id="search" type="search" placeholder="search" style="font-size:16px">
+                  </form>
+                </li>
+                  
+            <li><a href="/">Home</a></li>
+            <li><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="sudo apt-get upgrade" href="/+=1/" data-tooltip-id="f340ca3a-1416-cc43-7912-6e6c3d3f9cb2">+=1</a></li>
+            <li><a href="/store/python-hoodie/">Store</a></li>
+            
+            <li><a href="/community/">Community</a></li>
+              <li><a href="/login/">Log in</a></li>
+                      <li><a href="/register/">Sign up</a></li>
+            
+      
+                </ul>
+                <ul class="side-nav" id="navsidebar" style="left: 0px;">
+                <li>
+                  <form method="get" id="searchform" style="height:40px; padding-top:0px" action="/search/?l=hi">
+                    <input name="q" id="search" type="search" placeholder="search" style="font-size:16px">
+                  </form>
+                </li>
+                  
+            <li><a href="/">Home</a></li>
+            <li><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="sudo apt-get upgrade" href="/+=1/" data-tooltip-id="4cb79d2f-2212-78c5-0200-61f4bc733eb6">+=1</a></li>
+            <li><a href="/store/python-hoodie/">Store</a></li>
+            
+            <li><a href="/community/">Community</a></li>
+              <li><a href="/login/">Log in</a></li>
+                      <li><a href="/register/">Sign up</a></li>
+            
+      
+                </ul>
+              </div>
+            </nav>
+          </div>
+    {% else %}
+    <div id="modal1" class="modal">
+            <div class="modal-content center-align">
+             <form action="/create/" class="form-inline" method="post">
+              <h4>New Project</h4>
+              <hr><br/><br/>
+              <!--form!-->
+                    <div class="row">
+                      
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">keyboard_arrow_right</i>
+                          <input placeholder="" name="project_name" id="first_name" type="text" class="validate" required>
+                          <label for="first_name">PROJECT NAME</label>
+                        </div>
+                      
+                            <div class="input-field col s12">
+                            <i class="material-icons prefix">date_range</i>
+                            <label for="confirm">Start date</label>
+                            <input type="date" name="start_date" class="datepicker" required>
+                            </div>
+                        
+                        
+                            <div class="input-field col s12">
+                            <i class="material-icons prefix">date_range</i>
+                            <label for="confirm">Project Deadline</label>
+                            <input type="date" name="submission_date" class="datepicker" required>
+                            </div>
+
+                            <div class="input-field col s12">
+                                    <i class="material-icons prefix">mode_edit</i>
+                                    <textarea id="icon_prefix2" name="desc" class="materialize-textarea" required></textarea>
+                                    <label for="icon_prefix2">PROJECT DESCRIPTION</label>
+                            </div>
+                        
+                    </div>
+                        <input class="btn-flat wave" type="submit" value="Create" style="background-color:#24292e;color:#FFFFFF">
+                  </form>
+              <!--en form!-->
+            </div>
+          </div>
+
+          <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+      <div class="modal-content center-align">
+        <form action="/create_task/" class="form-inline" method="post">
+          <h4>New Task</h4>
+          <hr><br/><br/>
+          <div class="row">
+              <div class="input-field col s12">
+                  <select name="project_name">
+                    <option value="" disabled selected>Choose your project</option>
+                    {% for i in data %}
+                      {% if i[5]==session.username|string or session.username|string == "admin" %}
+                        <option value="{{ i[1] }}">{{ i[1] }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+                  <label>Please select the project</label>
+              </div>
+              <div class="input-field col s12">
+                  <i class="material-icons prefix">keyboard_arrow_right</i>
+                  <input placeholder="" name="task_name" id="task_name" type="text" class="validate" required>
+                  <label for="task_name">TASK NAME</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea id="icon_prefix2" name="desc" class="materialize-textarea" required></textarea>
+                <label for="icon_prefix2">TASK DESCRIPTION</label>
+              </div>
+              <div class="input-field col s12">
+                <select name="dev_list" id="dev_list" multiple>
+                  <option disabled selected>Choose your option</option>
+                  {% for i in datad %}
+                  <option value="{{ i[0] }}">{{ i[0] }}</option>
+                  {% endfor %}
+                </select>
+                <label>Assign Developers</label>
+                
+              </div>
+          </div>
+        <input class="btn-flat wave" type="submit" value="Create Task" style="background-color:#24292e;color:#FFFFFF">
+        </form>
+      </div>
+    </div>
+          <ul id="dropdown1" class="dropdown-content">
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="#!">Settings</a></li>
+                <li><a href="/logout/">Logout</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Help center</a></li>
+              </ul>
+    <div class="navbar-fixed">
+        <nav style="background-color:#1b1c1d">
+          <div class="nav-wrapper container">
+            <a href="/" class="brand-logo"><img class="img-responsive" src="{{ url_for("static",filename='img/logo.png') }}"></a>
+            <a href="#" data-activates="navsidebar" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <ul class="right hide-on-med-and-down">
+            <li><i class="material-icons">search</i></li>
+            <li>
+              <form method="get" id="searchform" style="height:50px;" action="/search/?l=hi">
+                <input name="q" id="search" type="search" placeholder="search" style="font-size:16px">
+              </form>
+            </li>
+        <li><a href="/workspace">Workspace</a></li>
+        {% if session.user_type|string == "manager" or session.user_type|string == "admin" %}
+        <li><a class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="create project" href="#modal1" >+project</a></li>
+        <li><a class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="create new task" href="#modal2" >+task</a></li>
+        {% endif %}
+        <li><a href="/bug/">Report Bug</a></li>
+        <li><a href="/community/">Community</a></li>
+        <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="dropdown1">{{ session.username }}</a></li>
+  
+            </ul>
+            <ul class="side-nav" id="navsidebar" style="left: 0px;">
+            <li>
+              <form method="get" id="searchform" style="height:40px; padding-top:0px" action="/search/?l=hi">
+                <input name="q" id="search" type="search" placeholder="search" style="font-size:16px">
+              </form>
+            </li>
+              
+        <li><a href="/">Home</a></li>
+        <li><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="sudo apt-get upgrade" href="/+=1/" data-tooltip-id="4cb79d2f-2212-78c5-0200-61f4bc733eb6">+=1</a></li>
+        <li><a href="/bug/">Report Bug</a></li>
+        
+        <li><a href="/community/">Community</a></li>
+          <li><a href="/login/">Log in</a></li>
+                  <li><a href="/register/">Sign up</a></li>
+        
+  
+            </ul>
+          </div>
+        </nav>
+      </div>
+    {% endif %}
+    {% block body %}{% endblock %}
+    <footer class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Producteev, Inc</h5>
+                  <p class="white-text">All rights reserved. Patented. <a href="#">Privacy Policy & Terms of Service.</a></p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Follow us.</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Google+</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2018 Copyright
+              </div>
+            </div>
+          </footer>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+    <script>
+            $('.button-collapse').sideNav();
+            $('.button').sideNav();
+            $('.collapsible').collapsible();
+  $('select').material_select();
+  $('#icon-prefix2').trigger('autoresize');
+  $('#modalx').leanModal('open');
+    $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+    
+  });
+  $(".dropdown-button").dropdown({hover:true});
+  $('.datepicker').pickadate({
+      maxDate: '0',
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 200, // Creates a dropdown of 15 years to control year
+    });
+    $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+        </script>
+</body>
+</html>

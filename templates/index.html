@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="TPS">
+    <title>Your online project management software - Producteev</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/line-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/nivo-lightbox.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/main.css') }}">    
+    <link rel="stylesheet" href="{{ url_for("static",filename='css/responsive.css') }}">
+
+  </head>
+  <body>
+
+    <!-- Header Section Start -->
+    <header id="hero-area" data-stellar-background-ratio="0.5">    
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a href="index.html" class="navbar-brand"><img class="img-fulid" src="{{ url_for("static",filename='img/logo.png') }}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="lnr lnr-menu"></i>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#hero-area">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Start -->
+        <ul class="mobile-menu">
+           <li>
+              <a class="page-scroll" href="#hero-area">Home</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#services">Services</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#features">Features</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#pricing">Pricing</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#team">Team</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#contact">Contact</a>
+            </li>
+        </ul>
+        <!-- Mobile Menu End -->
+
+      </nav>
+      <!-- Navbar End -->   
+      <div class="container">      
+        <div class="row justify-content-md-center">
+          <div class="col-md-10">
+            <div class="contents text-center">
+              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Producteev</h1>
+              <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">Stop starting, Start finishing.</p>
+              {% if session.logged_in %}
+              <a href="/workspace" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Go to Workspace</a>
+              {% else %}
+              <a href="/login" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Login</a>
+              <a href="/register" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Register</a>
+              {% endif %}
+            </div>
+          </div>
+        </div> 
+      </div>           
+    </header>
+    <!-- Header Section End --> 
+
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Project Management Made Easy</h2>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Producteev is beautiful, flexible project and task management software for teams</p>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+              <div class="icon">
+                <i class="lnr lnr-pencil"></i>
+              </div>
+              <h4>Gain Visibility</h4>
+              <p>View real-time reports and status for all of your team’s projects.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="0.8s">
+              <div class="icon">
+                <i class="lnr lnr-code"></i>
+              </div>
+              <h4>Simplify Planning</h4>
+              <p>Easily turn strategy into an actionable plan to achieve success.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="1.2s">
+              <div class="icon">
+                <i class="lnr lnr-mustache"></i>
+              </div>
+              <h4>Enable Collaboration</h4>
+              <p>Centralize communication with stakeholders while maintaining full context.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+              <div class="item-boxes wow fadeInDown" data-wow-delay="1.4s">
+                <div class="icon">
+                  <i class="lnr lnr-pencil"></i>
+                </div>
+                <h4>Streamline Workflow</h4>
+                <p>Flexibility to support, manage and track your team's approach to work.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Features Section Start -->
+    <section id="features" class="section" data-stellar-background-ratio="0.2">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title">Scales with your team and across the organization</h2>
+          <hr class="lines">
+          <p class="section-subtitle">Across the hall or across the globe, we have an online work management solution for your company.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-12 col-xs-12">
+            <div class="container">
+              <div class="row">
+                 <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
+                    <span class="icon">
+                      <i class="lnr lnr-rocket"></i>
+                    </span>
+                    <div class="text">
+                      <h4>Marketing</h4>
+                      <p>Exceed customer expectations with our easy-to-use marketing project management solution</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
+                    <span class="icon">
+                      <i class="lnr lnr-laptop-phone"></i>
+                    </span>
+                    <div class="text">
+                      <h4>Project Management</h4>
+                      <p>Set priorities and align your team to work faster and smarter across your organization</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
+                    <span class="icon">
+                      <i class="lnr lnr-layers"></i>
+                    </span>
+                    <div class="text">
+                      <h4>Product Development</h4>
+                      <p>Accelerate product development using Wrike’s collaborative product management tools</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
+                    <span class="icon">
+                      <i class="lnr lnr-cog"></i>
+                    </span>
+                    <div class="text">
+                      <h4>Creative</h4>
+                      <p>Tailor made for Creative teams who thrive on turning inspiration into execution</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xs-12">
+            <div class="show-box">
+              <img class="img-fulid" src="{{ url_for("static",filename='img/features/feature.png') }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section End -->    
+
+  
+    <!-- Start Video promo Section -->
+    <section class="video-promo section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <div class="video-promo-content text-center">
+                <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Watch Our Intro video</h2>
+                <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>
+                <a href="" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="lnr lnr-film-play"></i></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Video Promo Section -->
+
+    <!-- Start Pricing Table Section -->
+    <div id="pricing" class="section pricing-section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title">Pricing Table</h2>
+          <hr class="lines">
+          <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+        </div>
+
+        <div class="row pricing-tables">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="pricing-table">
+              <div class="pricing-details">
+                <h2>Free</h2>
+                <span>₹0/-</span>
+                <ul>
+                  <li>Consectetur adipiscing</li>
+                  <li>Nunc luctus nulla et tellus</li>
+                  <li>Suspendisse quis metus</li>
+                  <li>Vestibul varius fermentum erat</li>
+                </ul>
+              </div>
+              <div class="plan-button">
+                <a href="#" class="btn btn-common">Get Plan</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="pricing-table">
+              <div class="pricing-details">
+                <h2>Popular</h2>
+                <span>₹399/-</span>
+                <ul>
+                  <li>Consectetur adipiscing</li>
+                  <li>Nunc luctus nulla et tellus</li>
+                  <li>Suspendisse quis metus</li>
+                  <li>Vestibul varius fermentum erat</li>
+                </ul>
+              </div>
+              <div class="plan-button">
+                <a href="#" class="btn btn-common">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="pricing-table">
+              <div class="pricing-details">
+                <h2>Premium</h2>
+                <span>₹999/-</span>
+                <ul>
+                  <li>Consectetur adipiscing</li>
+                  <li>Nunc luctus nulla et tellus</li>
+                  <li>Suspendisse quis metus</li>
+                  <li>Vestibul varius fermentum erat</li>
+                </ul>
+              </div>
+              <div class="plan-button">
+                <a href="#" class="btn btn-common">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Pricing Table Section -->
+
+    <!-- Counter Section Start -->
+    <div class="counters section" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row"> 
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="facts-item">   
+              <div class="icon">
+                <i class="lnr lnr-clock"></i>
+              </div>             
+              <div class="fact-count">
+                <h3><span class="counter">1589</span></h3>
+                <h4>Working Hours</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="facts-item">   
+              <div class="icon">
+                <i class="lnr lnr-briefcase"></i>
+              </div>            
+              <div class="fact-count">
+                <h3><span class="counter">699</span></h3>
+                <h4>Completed Projects</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="facts-item"> 
+              <div class="icon">
+                <i class="lnr lnr-user"></i>
+              </div>              
+              <div class="fact-count">
+                <h3><span class="counter">203</span></h3>
+                <h4>No. of Clients</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="facts-item"> 
+              <div class="icon">
+                <i class="lnr lnr-heart"></i>
+              </div>              
+              <div class="fact-count">
+                <h3><span class="counter">1689</span></h3>
+                <h4>Peoples Love</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Counter Section End -->
+
+    <!-- Team section Start -->
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title">Our Team</h2>
+          <hr class="lines">
+          <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-team">
+              <img src="{{ url_for("static",filename='img/team/team1.jpg') }}" alt="">
+              <div class="team-details">
+                <div class="team-inner">
+                  <h4 class="team-title">Aditya Mathur</h4>
+                  <p>Chief Technical Officer</p>
+                  <ul class="social-list">
+                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-team">
+              <img src="{{ url_for("static",filename='img/team/team2.jpg') }}" alt="">
+              <div class="team-details">
+                <div class="team-inner">
+                  <h4 class="team-title">Tarini Prasad Samantray</h4>
+                  <p>CEO & Co-Founder</p>
+                  <ul class="social-list">
+                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-team">
+              <img src="{{ url_for("static",filename='img/team/team3.jpg') }}" alt="">
+              <div class="team-details">
+                <div class="team-inner">                  
+                  <h4 class="team-title">Neha Suman</h4>
+                  <p>Business Manager</p>
+                  <ul class="social-list">
+                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-team">
+              <img class="img-fulid" src="{{ url_for("static",filename='img/team/team4.jpg') }}" alt="">
+              <div class="team-details">
+                <div class="team-inner">
+                  <h4 class="team-title">Abhismita Mohanty</h4>
+                  <p>Graphic Designer</p>
+                  <ul class="social-list">
+                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Team section End -->
+
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="section" data-stellar-background-ratio="-0.2">      
+      <div class="contact-form">
+        <div class="container">
+          <div class="row">     
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="contact-us">
+                <h3>Contact With us</h3>
+                <div class="contact-address">
+                  <p>ITER, Bhubaneswar, Zip-751030, India</p>
+                  <p class="phone">Phone: <span>(+94 123 456 789)</span></p>
+                  <p class="email">E-mail: <span>(contact@producteev.com)</span></p>
+                </div>
+                <div class="social-icons">
+                  <ul>
+                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>     
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="contact-block">
+                <form id="contactForm">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                        <div class="help-block with-errors"></div>
+                      </div>                                 
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                        <div class="help-block with-errors"></div>
+                      </div> 
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group"> 
+                        <textarea class="form-control" id="message" placeholder="Your Message" rows="8" data-error="Write your message" required></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="submit-button text-center">
+                        <button class="btn btn-common" id="submit" type="submit">Send Message</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                        <div class="clearfix"></div> 
+                      </div>
+                    </div>
+                  </div>            
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>           
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Start -->
+    <footer>          
+      <div class="container">
+        <div class="row">
+          <!-- Footer Links -->
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <ul class="footer-links">
+              <li>
+                <a href="/">Homepage</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="/aboutus">About Us</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="copyright">
+              <p>All copyrights reserved &copy; 2018 - Designed & Developed by <a rel="nofollow" href="/">TPS</a></p>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End --> 
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="lnr lnr-arrow-up"></i>
+    </a>
+    
+    <div id="loader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>     
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="{{ url_for("static",filename='js/jquery-min.js') }}"></script>
+    <script src="{{ url_for("static",filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for("static",filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for("static",filename='js/jquery.mixitup.js') }}"></script>
+    <script src="{{ url_for("static",filename='js/nivo-lightbox.js') }}"></script>
+    <script src="{{ url_for("static",filename='js/owl.carousel.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/jquery.stellar.min.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/jquery.nav.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/scrolling-nav.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/jquery.easing.min.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/smoothscroll.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/jquery.slicknav.js') }}"></script>     
+    <script src="{{ url_for("static",filename='js/wow.js') }}"></script>   
+    <script src="{{ url_for("static",filename='js/jquery.vide.js') }}"></script>
+    <script src="{{ url_for("static",filename='js/jquery.counterup.min.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/jquery.magnific-popup.min.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/waypoints.min.js') }}"></script>    
+    <script src="{{ url_for("static",filename='js/form-validator.min.js') }}"></script>
+    <script src="{{ url_for("static",filename='js/contact-form-script.js') }}"></script>   
+    <script src="{{ url_for("static",filename='js/main.js') }}"></script>
+
+  </body>
+</html>

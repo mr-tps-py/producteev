@@ -1,0 +1,76 @@
+{% extends "header.html" %}
+{% block body %}
+<main>
+
+                <ul id="tabs-swipe-demo" class="tabs">
+                        <li class="tab col s3"><a class="active" href="#test-swipe-1">{{ data_p[1] }}&nbsp;-&nbsp;Tasks</a></li>
+                        <li class="tab col s3"><a href="#test-swipe-2">Edit&nbsp;Project&nbsp;-&nbsp;{{ data_p[1] }}</a></li>
+                        
+                      </ul>
+                      <div id="test-swipe-1" class="col s12">
+                          <div class="container center-aligned">
+                                <div class="container center-aligned">
+                            {% if task=={} %}
+                                    <p>No tasks created.</p>
+                            {% else %}
+                            <ul class="collapsible popout" data-collapsible="expandable">
+                                {% for i in task %}
+                                    <li>
+                                      <div class="collapsible-header">Task - <a href="/task/{{i}}">{{ i }}</a></div>
+                                      <div class="collapsible-body">
+                                          <div class="container">
+                                              <p>Description : {{ task[i][0] }}</p>
+                                              <p>Assigned Developers :{{ ','.join(task[i][1]) }}</p>
+                                          </div>
+                                      </div>
+                                    </li>
+                                {% endfor %}
+                                  </ul>
+                            {% endif %}
+                                </div>
+                      </div>
+                      </div>
+                      <div id="test-swipe-2" class="col s12">
+                            <div class="container center-align">
+                                    <div class="container">
+                                        <form action="/project/{{ data_p[0] }}" class="form-inline" method="post">
+                                         <h4>Edit Project</h4>
+                                         <hr><br/><br/>
+                                         <!--form!-->
+                                               <div class="row">
+                                                 
+                                                   <div class="input-field col s12">
+                                                     <i class="material-icons prefix">keyboard_arrow_right</i>
+                                                     <input placeholder="" name="project_name" id="first_name" type="text" class="validate" value="{{ data_p[1] }}" required>
+                                                     <label for="first_name">PROJECT NAME</label>
+                                                   </div>
+                                                 
+                                                       <div class="input-field col s12">
+                                                       <i class="material-icons prefix">date_range</i>
+                                                       <label for="confirm">Start date</label>
+                                                       <input type="date" name="start_date" class="datepicker" value="{{ data_p[2] }}" required>
+                                                       </div>
+                                                   
+                                                   
+                                                       <div class="input-field col s12">
+                                                       <i class="material-icons prefix">date_range</i>
+                                                       <label for="confirm">Project Deadline</label>
+                                                       <input type="date" name="submission_date" class="datepicker" value="{{ data_p[3] }}" required>
+                                                       </div>
+                                
+                                                       <div class="input-field col s12">
+                                                               <i class="material-icons prefix">mode_edit</i>
+                                                               <textarea id="icon_prefix2" name="desc" class="materialize-textarea" required>{{ data_p[4] }}</textarea>
+                                                               <label for="icon_prefix2">PROJECT DESCRIPTION</label>
+                                                             </div>
+                                                   
+                                               </div>
+                                                   <input class="btn-flat wave" type="submit" value="UPDATE" style="background-color:#24292e;color:#FFFFFF">
+                                                </form>
+                                                </div>              
+                                         <!--en form!-->
+                                       </div>
+                                    </div>
+
+</main>
+{% endblock %}

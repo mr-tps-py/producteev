@@ -1,0 +1,66 @@
+{% extends "header.html" %}
+
+{% block body %}
+<main>
+<center>
+<div class="container">
+<div class="container">
+
+<h4>User Profile</h4>
+<form id="register-form" method=post action="/profile/">
+<center class="chip transparent">{{ error }}</center>
+<div class="chip">
+        Leave fields Unchanged If don't want to Update.
+        <i class="close material-icons">close</i>
+    </div>
+<div class="row">
+
+<div class="input-field col l12 m9 s12">
+<i class="material-icons prefix">person</i>
+<input class="" id="fname" name="fname" type="text" value="{{data[0][5]}}" required>
+<label for="fname">First Name</label>
+</div>
+
+<div class="input-field col l12 m9 s12">
+<i class="material-icons prefix">person</i>
+<input class="" id="lname" name="lname" type="text" value="{{data[0][6]}}" required>
+<label for="lname">Last Name</label>
+</div>
+
+<div class="input-field col l12 m12 s12">
+<i class="material-icons prefix">account_circle</i>
+<input class="validate" right-alert id="username" name="username" type="text" value="{{data[0][1]}}" minlength=6 disabled>
+<label for="username">Username</label>
+</div>
+
+<div class="input-field col l12 m9 s12">
+<i class="material-icons prefix">email</i>
+<input class="" id="email" name="email" type="email" value="{{data[0][2]}}" required>
+<label for="email" data-error='worng' data-success='wow!'>Email Address</label>
+</div>
+
+<div class="input-field col l12 m9 s12">
+<i class="material-icons prefix">phone</i>
+<input id="telephone" name="telephone" type="tel" class="validate" value="{{data[0][7]}}" required>
+<label for="telephone">Telephone</label>
+</div>
+
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">security</i>
+<input class="validate" id="password" name="password" type="password">
+<label for="password">Password</label>
+</div>
+
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">security</i>
+<input class="validate" id="confirm" name="confirm" type="password">
+<label for="confirm">Repeat Password</label>
+</div>
+</div>
+<center><input class="btn" type="submit" value="UPDATE" style="background-color:#FFD166;color:#000"></center>
+</div>
+</div>
+
+</center>
+</main>
+{% endblock %}

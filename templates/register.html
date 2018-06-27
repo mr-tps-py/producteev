@@ -1,0 +1,77 @@
+{% extends "header.html" %}
+
+{% block body %}
+<main>
+<center>
+<div class="container">
+<div class="container">
+
+<h4>Register</h4>
+<form id="register-form" method=post action="/register/">
+<center class="chip transparent">{{ error }}</center>
+<div class="row">
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">person</i>
+<input class="" id="fname" name="fname" type="text" value="" required>
+<label for="fname">First Name</label>
+</div>
+
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">person</i>
+<input class="" id="lname" name="lname" type="text" value="" required>
+<label for="lname">Last Name</label>
+</div>
+
+<div class="input-field col l9 m9 s6">
+<i class="material-icons prefix">account_circle</i>
+<input class="validate" right-alert id="username" name="username" type="text" value="" minlength=6 required>
+<label for="username">Username</label>
+</div>
+
+<div class="input-field col l3 m3 s6">
+    <select name="user_type" required>
+      <option value="" disabled selected>Designation</option>
+      <option value="admin">System Admin</option>
+      <option value="hr">Human Resource</option>
+      <option value="manager">Project Manager</option>
+      <option value="developer">Developer</option>
+      <option value="client">Client/Company</option>
+    </select>
+</div>
+
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">email</i>
+<input class="" id="email" name="email" type="email" value="" required>
+<label for="email" data-error='worng' data-success='wow!'>Email Address</label>
+</div>
+
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">phone</i>
+<input id="telephone" name="telephone" type="tel" class="validate">
+<label for="telephone">Telephone</label>
+</div>
+
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">security</i>
+<input class="validate" id="password" name="password" type="password" required>
+<label for="password">Password</label>
+</div>
+
+<div class="input-field col l6 m6 s12">
+<i class="material-icons prefix">security</i>
+<input class="validate" id="confirm" name="confirm" type="password" required>
+<label for="confirm">Repeat Password</label>
+</div>
+</div>
+<center><input class="btn" type="submit" value="Register" style="background-color:#FFD166;color:#000"></center>
+</div>
+</div>
+
+</center>
+</main>
+<script>
+     $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+{% endblock %}
