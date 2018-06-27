@@ -8,7 +8,7 @@ import gc, os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'my_secrets..!!!'
-app.config['UPLOAD_FOLDER']='/home/lazarus/Desktop/FP/uploads/'
+app.config['UPLOAD_FOLDER']='' #enter the path
 
 ALLOWED_EXTENSIONS=['zip']
 
